@@ -18,9 +18,9 @@ namespace ArexxMatrix {
     let MatrixHeigth: number
     let MatrixWidth: number
     /** 
-     * genereert het neopixel object, wanneer deze nog niet bestaat
+     * generates the neopixel object, if it doesn't already exist
      */
-    //%block="maak matrix met hoogte %Heigth| en breedte %Width| met RGB type %mode| op pin %PinNumber"
+    //%block="create matrix with height %Heigth| and width %Width| with RGB type %mode| op pin %PinNumber"
     //%weight=100
     //% Heigth.defl=10 Width.defl=20 PinNumber.defl=DigitalPin.P2
     export function createMatrix(Heigth: number, Width: number, mode: NeoPixelMode, PinNumber: DigitalPin): void {
@@ -46,24 +46,24 @@ namespace ArexxMatrix {
         return MatrixHeigth
     }
     /**
-     * Ingevoerde displaywijzigingen doorvoeren
+     * Show Display Changes
      */
-    //%block="Matrix wijzigingen weergeven"
+    //%block="Show matrix changes"
     export function showMatrix(): void {
         matrix.show()
     }
     /**
-     * alle lichtjes van de matrix uitzetten
+     * Turn Off matrix
      */
-    //% block="Matrix legen"
+    //% block="Matrix Clear"
     //% weight=1
     export function legen(): void {
         matrix.clear()
     }
 
     /**
-    * Zet een pixel op deze positie naar een bepaalde kleur.
-    * Let op! De pixels gaan pas aan na het blok "Matrix wijzigingen weergeven"
+    * Set a pixel at this position to a certain color.
+    * Pay attention! The pixels only turn on after the block "Show matrix changes"
     */
     //% block="Zet pixel op positie x %x| y %y| op kleur %colour"
     //% colour.shadow="Matrix_rgb"
